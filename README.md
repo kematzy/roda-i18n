@@ -87,27 +87,49 @@ gem that's used to create the above.
 
 ## Ideas
 
-A list of ideas that may be possible or even outlandish.
+A few ideas that may be outlandish, but possible?
 
 
-* Ability to load translations from multiple locations via an array.
+### Ability to load translations from multiple locations via an array.
 
-      plugin :i18n, :translations => ['app1/i18n', 'app2/i18n', 'app3/i18n']
+    plugin :i18n, :translations => ['app1/i18n', 'app2/i18n', 'app3/i18n']
    
-   Reference: [https://github.com/ai/r18n/tree/master/r18n-core#loaders]
+[Concept Reference](https://github.com/ai/r18n/tree/master/r18n-core#loaders)
    
-   You can also set several loaders to merge translations from different sources:
+You can also set several loaders to merge translations from different sources:
    
-       R18n.default_places = [MyLoader.new, DBLoader.new, 'path/to/yaml']
+     R18n.default_places = [MyLoader.new, DBLoader.new, 'path/to/yaml']
    
 
 
+### Ability to add a localisation block within the routes block
+
+Imagine a route prefixer that would add a `/:locale` param in the route and make the
+`:locale` value available in the `params` hash as `params[:locale]`
+
+    route do |r|
+      r.i18n do  # sets '/:locale' route prefix
+        # all other routes 
+      end
+    end
+
+
+
+----
 
 ## TODOs
 
-* clean-up the code a bit
+* test session support of locale, ie:  session[:locale] retrieval
 
+* fix default locale being retained when translation is missing
 
+* add further tests to confirm core functionality
+
+* add support for temporary locale switching
+
+* clean-up the code
+
+* consider adding a few more instance methods
 
 
 
