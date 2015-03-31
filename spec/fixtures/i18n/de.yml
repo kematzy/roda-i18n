@@ -1,0 +1,31 @@
+one: Ein
+
+params: "Ist %1 zwischen %1 und %2?"
+
+in:
+  another: Hierarchisch
+
+only:
+  english: "Nein, nicht auf Englisch"
+
+# sum: !!proc |x, y| x + y
+
+post:
+  title: "Blog-beitrag: '%1'"
+  comments: !!pl
+    0: "noch keine kommentare zu '%2'"
+    1: "einen kommentar '%2'"
+    n: "%1 kommentare zum '%2'"
+
+greater: 1 < 2 ist wahr
+
+warning: !!html <b>Warnung</b>
+
+
+
+files: !!pl
+  1: 1 datei
+  n: "%1 dateien"
+
+my_type: !!special_type
+  attr: value

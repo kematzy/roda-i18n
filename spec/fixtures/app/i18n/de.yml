@@ -1,0 +1,6 @@
+hello: "Hallo aus app/i18n/de.yml"
+
+do:
+  you:
+    speak:
+      english: "Kannst du Englisch?"
