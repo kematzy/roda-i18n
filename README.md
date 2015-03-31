@@ -93,13 +93,14 @@ A few ideas that may be outlandish, but possible?
 ### Ability to load translations from multiple locations via an array.
 
     plugin :i18n, :translations => ['app1/i18n', 'app2/i18n', 'app3/i18n']
-   
-[Concept Reference](https://github.com/ai/r18n/tree/master/r18n-core#loaders)
-   
-You can also set several loaders to merge translations from different sources:
-   
-     R18n.default_places = [MyLoader.new, DBLoader.new, 'path/to/yaml']
-   
+
+
+> [Concept Reference](https://github.com/ai/r18n/tree/master/r18n-core#loaders)
+>    
+> You can also set several loaders to merge translations from different sources:
+>    
+>     R18n.default_places = [MyLoader.new, DBLoader.new, 'path/to/yaml']
+>    
 
 
 ### Ability to add a localisation block within the routes block
@@ -119,7 +120,7 @@ Imagine a route prefixer that would add a `/:locale` param in the route and make
 
 ## TODOs
 
-* test session support of locale, ie:  session[:locale] retrieval
+* test session support of locale, ie:  `session[:locale]` retrieval
 
 * fix default locale being retained when translation is missing
 
@@ -129,7 +130,11 @@ Imagine a route prefixer that would add a `/:locale` param in the route and make
 
 * clean-up the code
 
-* consider adding a few more instance methods
+* consider adding a few more instance methods to easily work i18n within views
+  
+  1. #i18n_set() => ability to set and return a temporary locale within a view.
+  
+  2. #i18n_available_locales() => return an array of available translations.
 
 
 
