@@ -90,7 +90,7 @@ class Roda
       #   def i18n_locale(&blck)
       #     on ':locale' do |locale|
       #       @_locale = locale || "en"
-      #       params[:locale] = locale
+      #       params['locale'] = locale
       #       
       #       super(&blck)
       #     end
@@ -116,13 +116,13 @@ class Roda
           ::R18n.thread_set do
             locales = ::R18n::I18n.parse_http(request.env['HTTP_ACCEPT_LANGUAGE'])
             if locale.nil?
-              if request.params[:locale]
-                locales.insert(0, request.params[:locale])
-              elsif request.session[:locale]
-                locales.insert(0, request.session[:locale])
+              if request.params['locale']
+                locales.unshift(request.params['locale'])
+              elsif request.session['locale']
+                locales.unshift(request.session['locale'])
               end
             else
-              locales.insert(0, locale)
+              locales.unshift(locale)
             end
             ::R18n::I18n.new(locales, ::R18n.default_places,
                :off_filters => :untranslated, :on_filters => :untranslated_html)
