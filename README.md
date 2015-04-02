@@ -132,9 +132,9 @@ Imagine a route prefixer that would add a `/:locale` param in the route and make
 
 * consider adding a few more instance methods to easily work i18n within views
   
-  1. #i18n_set() => ability to set and return a temporary locale within a view.
+  1. `i18n_set_locale()` => ability to set and return a temporary locale within a view.
   
-  2. #i18n_available_locales() => return an array of available translations.
+  2. `i18n_available_locales()` => return an array of available translations.
 
 
 
