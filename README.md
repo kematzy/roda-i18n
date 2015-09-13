@@ -287,7 +287,15 @@ Som form of built-in support for storing / loading translations from a Sequel ba
 
 ## TODOs
 
-* I'm sure there's something, but right now the list is empty ;-)
+* Add better tests for Multiple Apps scenarios. 
+  
+  * What happens if plugin is defined in multiple apps at the same time? and with different configurations?
+
+* Improve upon error handling and adding better tests of this functionality.
+
+* Add RDocs formatted README
+
+* ...and some more stuff that slipped my mind right now.
 
 
 ## Credits
