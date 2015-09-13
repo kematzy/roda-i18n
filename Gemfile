@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'roda', '~> 2.1.0'
+gem 'roda', '~> 2.5.1'
 gem 'r18n-core'
 
 group :test do
-  gem 'rack-protection'
-  gem 'rack_csrf'
-  # gem 'sqlite3'
-  
-  gem 'rspec'
+  gem 'minitest'
+  gem 'minitest-hooks'
   gem "rack-test"
-  gem 'rspec-html-matchers'
-  gem 'rspec-collection_matchers'
   
+  gem 'tilt'
+  gem 'erubis'
+  gem 'kramdown'
+  
+  gem 'simplecov', :require => false
 end
