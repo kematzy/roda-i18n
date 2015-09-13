@@ -1,12 +1,15 @@
+hello: "Hallo aus i18n/de.yml"
+
 one: Ein
+two: Zwei
 
 params: "Ist %1 zwischen %1 und %2?"
 
 in:
   another: Hierarchisch
 
-only:
-  english: "Nein, nicht auf Englisch"
+# only:
+#   english: "Nein, nicht auf Englisch"
 
 # sum: !!proc |x, y| x + y
 

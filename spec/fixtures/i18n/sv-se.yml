@@ -1,13 +1,29 @@
+hello: "Hej från ./i18n/sv-se.yml"
+
 one: Ett
 two: Två
+
+do:
+  you:
+    speak:
+      swedish: "Pratar du svenska?"
+
+
+user:
+  # edit: Edit user
+  # name: User name is %1
+  count: !!pl
+    1: Det finns en användare
+    n: Det finns %1 användare
+
 
 params: Är %1 mellan %1 och %2?
 
 in:
   another: Hierarkisk
 
-only:
-  english: "Nej, inte på engelska"
+# only:
+#   english: "Nej, inte på engelska"
   
 
 robots: !!pl
@@ -15,6 +31,8 @@ robots: !!pl
   1: En robot
   n: "%1 robotar"
 
+
+svenska: "Denna finns bara i svenska översättningarna"
 
 post:
   title: "Blogginlägg: '%1'"

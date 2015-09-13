@@ -1,4 +1,8 @@
+hello: "Hola de app/i18n/es.yml"
+
+one: 'Uno'
+two: 'Dos'
 do:
   you:
     speak:
-      english: "Habla usted Inglés?"
+      spanish: "¿Hablas español?"

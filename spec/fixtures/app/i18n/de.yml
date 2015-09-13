@@ -3,4 +3,12 @@ hello: "Hallo aus app/i18n/de.yml"
 do:
   you:
     speak:
-      english: "Kannst du Englisch?"
+      german: "Sprechen Sie Deutsch?"
+      
+      
+user:
+  edit: Benutzer bearbeiten
+  name: Benutzername ist %1
+  count: !!pl
+    1: Ist 1 Benutzer
+    n: Es gibt %1 Benutzer

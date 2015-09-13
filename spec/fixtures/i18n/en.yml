@@ -1,3 +1,5 @@
+hello: "Hello from ./i18n/en.yml"
+
 one: One
 two: Two
 
@@ -33,3 +35,34 @@ files: !!pl
 
 my_type: !!special_type
   attr: value
+
+
+as:
+  html: !!html 
+    <h1>Embedded HTML!</h>
+    <p>It just works!</p>
+  
+  md: !!markdown
+    Hello **Markdown**!
+
+
+
+_html: !!html 
+    <h1>Embedded HTML!</h>
+    <p>It just works!</p>
+  
+md: !!markdown
+  Hello **Markdown**!
+
+
+example: >
+        HTML goes into YAML without modification
+message: |
+
+        <blockquote style="font: italic 12pt Times">
+        <p>"Three is always greater than two,
+           even for large values of two"</p>
+        <p>--Author Unknown</p>
+        </blockquote>
+        
+date: 2007-06-01
