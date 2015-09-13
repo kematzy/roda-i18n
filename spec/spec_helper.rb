@@ -1,5 +1,9 @@
 # $:.unshift(File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'lib'))
 
+if ENV['COVERAGE']
+  require File.join(File.dirname(File.expand_path(__FILE__)), "roda_i18n_coverage")
+  SimpleCov.roda_i18n_coverage
+end
 
 ENV['RACK_ENV'] = 'test'
 
