@@ -13,10 +13,10 @@ spec = Gem::Specification.new do |s|
   s.files = %w(MIT-LICENSE README.md Rakefile) + Dir["{spec,lib}/**/*.rb"] + Dir["spec/**/*.yml"]
   s.license = 'MIT'
   s.description = "The Roda-i18n plugin enables easy addition of internationalisation (i18n) and localisation support in Roda apps"
-  s.add_dependency "roda"
-  s.add_dependency "r18n-core"
+  s.add_runtime_dependency 'roda', '~> 2.5', '>= 2.5.0'
+  s.add_runtime_dependency "r18n-core", '~> 2.0', '>= 2.0.3'
   
-  s.add_development_dependency "minitest"
-  s.add_development_dependency "minitest-hooks"
-  s.add_development_dependency "rack-test"
+  s.add_development_dependency "minitest", '~> 5.7', '>= 5.7.0'
+  s.add_development_dependency "minitest-hooks", '~> 1.1', '>= 1.1.0'
+  s.add_development_dependency "rack-test", '~> 0.6.3'
 end
