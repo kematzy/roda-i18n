@@ -1,16 +1,19 @@
 source 'https://rubygems.org'
 
-gem 'roda', '~> 2.5.1'
-gem 'r18n-core'
+# Specify your gem's dependencies in roda-tags.gemspec
+gemspec
 
-group :test do
-  gem 'minitest'
-  gem 'minitest-hooks'
-  gem "rack-test"
-  
-  gem 'tilt'
-  gem 'erubis'
-  gem 'kramdown'
-  
-  gem 'simplecov', :require => false
-end
+# gem 'roda', '~> 2.5.1'
+# gem 'r18n-core'
+#
+# group :test do
+#   gem 'minitest'
+#   gem 'minitest-hooks'
+#   gem "rack-test"
+#
+#   gem 'tilt'
+#   gem 'erubis'
+#   gem 'kramdown'
+#
+#   gem 'simplecov', :require => false
+# end
