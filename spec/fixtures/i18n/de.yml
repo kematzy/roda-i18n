@@ -3,7 +3,7 @@ hello: "Hallo aus i18n/de.yml"
 one: Ein
 two: Zwei
 
-params: "Ist %1 zwischen %1 und %2?"
+params: "Ist %3 zwischen %1 und %2?"
 
 in:
   another: Hierarchisch
@@ -18,7 +18,7 @@ post:
   comments: !!pl
     0: "noch keine kommentare zu '%2'"
     1: "einen kommentar '%2'"
-    n: "%1 kommentare zum '%2'"
+    n: "'%1' kommentare zum '%2'"
 
 greater: 1 < 2 ist wahr
 

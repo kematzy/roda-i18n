@@ -11,7 +11,7 @@ do:
 
 user:
   # edit: Edit user
-  # name: User name is %1
+  name: Användarnamn är %1
   count: !!pl
     1: Det finns en användare
     n: Det finns %1 användare
