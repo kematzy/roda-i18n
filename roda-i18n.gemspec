@@ -6,13 +6,13 @@ require 'roda/i18n/version'
 Gem::Specification.new do |spec|
   spec.name           = 'roda-i18n'
   spec.version        = ::Roda::I18n::VERSION
-  spec.authors        = ["Kematzy"]
-  spec.email          = ["kematzy@gmail.com"]
+  spec.authors        = ['Kematzy']
+  spec.email          = ['kematzy@gmail.com']
   
-  spec.summary        = "Roda Internationalisation plugin"
+  spec.summary        = 'Roda Internationalisation plugin'
   spec.description    = "The Roda-i18n plugin enables easy addition of internationalisation (i18n) and localisation support in Roda apps"
-  spec.homepage       = "http://github.com/kematzy/roda-i18n"
-  spec.license        = "MIT"
+  spec.homepage       = 'http://github.com/kematzy/roda-i18n'
+  spec.license        = 'MIT'
   
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
@@ -29,21 +29,21 @@ Gem::Specification.new do |spec|
   
   spec.platform         = Gem::Platform::RUBY
   spec.has_rdoc         = true
-  spec.extra_rdoc_files = ["README.md", "MIT-LICENSE"]
-  spec.rdoc_options     += ["--quiet", "--line-numbers", "--inline-source", '--title', 'Roda-i18n: internationalisation plugin', '--main', 'README.md']
+  spec.extra_rdoc_files = ['README.md', "MIT-LICENSE"]
+  spec.rdoc_options     += ['--quiet', '--line-numbers', '--inline-source', '--title', 'Roda-i18n: internationalisation plugin', '--main', 'README.md']
   
   spec.add_runtime_dependency 'roda', '~> 2.5', '>= 2.5.0'
   spec.add_runtime_dependency 'tilt'  
-  spec.add_runtime_dependency "r18n-core", '~> 2.0', '>= 2.0.3'
+  spec.add_runtime_dependency 'r18n-core', '~> 2.0', '>= 2.0.3'
   
   spec.add_development_dependency 'bundler', "~> 1.10"
   spec.add_development_dependency 'rake', "~> 10.0"
   spec.add_development_dependency 'erubis'
   spec.add_development_dependency 'kramdown'
-  spec.add_development_dependency "minitest", '~> 5.7', '>= 5.7.0'
-  spec.add_development_dependency "minitest-hooks", '~> 1.1', '>= 1.1.0'
+  spec.add_development_dependency 'minitest', '~> 5.7', '>= 5.7.0'
+  spec.add_development_dependency 'minitest-hooks', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'minitest-rg'
-  spec.add_development_dependency "rack-test", '~> 0.6.3'
+  spec.add_development_dependency 'rack-test', '~> 0.6.3'
   spec.add_development_dependency 'nokogiri'
   spec.add_development_dependency 'simplecov'
   
