@@ -180,7 +180,7 @@ end
 <br>
 
 
-### ``#i18n_set_locale_from(type)` - (request method)
+### `#i18n_set_locale_from(type)` - (request method)
 
 Obtains the locale from either ENV, HTTP (browser), Params or Session values.
 
