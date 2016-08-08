@@ -19,12 +19,12 @@ require 'date'
 
 class Minitest::Spec
   include Rack::Test::Methods
-  
+
   def rt(path,opts = {})
     get path
     last_response.body
   end
-  
+
   def app(type = nil, &block)
     case type
     when :new
@@ -67,7 +67,7 @@ class Minitest::Spec
     b.close if b.respond_to?(:close)
     s
   end
-  
+
   def _app(&block)
      c = Class.new(Roda)
      c.plugin :render
@@ -86,13 +86,13 @@ class Minitest::Spec
   def _body
     last_response.body
   end
-  
+
   # syntactic sugar
   def _status
     last_response.status
   end
-  
-  
+
+
   # Custom specs app
   def i18n_app(view, opts = {}, configs = {})
     app(:bare) do
@@ -105,7 +105,7 @@ class Minitest::Spec
     end
     body('/')
   end
-  
+
   # Custom specs app for :i18n_set_locale_from()
   def i18n_set_locale_from_app(loc, type)
     confs = { locale: loc, translations: File.expand_path('../fixtures/**/i18n', __FILE__) }
@@ -126,12 +126,12 @@ class Minitest::Spec
       end
     end
   end
-  
+
   # shortcut for setting config opts
   def set_req(session = {}, http_accept = '')
     { 'rack.session' => session, 'HTTP_ACCEPT_LANGUAGE' => http_accept }
   end
-  
+
   # Custom specs app for :i18n_set_locale()
   def i18n_set_locale_app(loc, set_loc, set_loc2)
     confs = { locale: loc, translations: File.expand_path('../fixtures/**/i18n', __FILE__) }
@@ -158,7 +158,7 @@ class Minitest::Spec
       end
     end
   end
-  
+
   # Custom specs app for r.i18n_locale()
   def i18n_locale_app(loc)
     confs = { locale: loc, translations: File.expand_path('../fixtures/**/i18n', __FILE__) }
@@ -171,11 +171,9 @@ class Minitest::Spec
           r.is('t') { erb('<%= t.one %>') }
           r.is('l') { erb '<%= l Date.parse("October 5, 2011") %>' }
         end
-        # routes behind the block does not work
         r.get('two')   { erb('<%= t.two %>') }
       end
     end
   end
-  
 end
 
