@@ -8,6 +8,7 @@ Rake::TestTask.new(:spec) do |t|
 end
 
 task :default => :spec
+task :test => :spec
 
 desc 'Run specs with coverage'
 task :coverage do
