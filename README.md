@@ -1,6 +1,9 @@
 # Roda-i18n
 
-[![Build Status](https://travis-ci.org/kematzy/roda-i18n.svg?branch=master)](https://travis-ci.org/kematzy/roda-i18n)
+[![Build Status](https://travis-ci.org/kematzy/roda-i18n.svg?branch=master)](https://travis-ci.org/kematzy/roda-i18n) 
+
+[![Gem Version](https://badge.fury.io/rb/roda-i18n.svg)](https://badge.fury.io/rb/roda-i18n)
+
 
 Add Internationalisation (i18n) and localisation support to your [Roda](http://roda.jeremyevans.net/) 
 apps, based upon the [R18n](https://github.com/ai/r18n) gem.
