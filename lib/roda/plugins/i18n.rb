@@ -266,6 +266,20 @@ class Roda
           # return # NB!! needed to enable routes below to work
         end
         
+        # Match only paths that contain one available locale from the ::R18n.available_locales
+        # list, otherwise skip it.
+        #
+        # This custom matcher allows us to have other routes below the r.locale .. declaration
+        def _match_available_locales_only
+         lambda do
+           locale = remaining_path.split("/").reject(&:empty?).first
+           if ::R18n.available_locales.map(&:code).map(&:downcase).include?(locale.downcase)
+             @captures.push(locale)
+             @remaining_path = remaining_path.sub("/#{locale}", "")
+           end
+         end
+        end
+        
         # Sets the locale based upon <tt>:locale</tt> prefixed routes
         #  
         #   route do |r|
@@ -280,8 +294,8 @@ class Roda
         #   end
         #
         def locale(opts = {}, &blk)
-          on(':locale', opts) do |l|
-            loc = l || self.class.opts[:locale]
+          on(_match_available_locales_only, opts) do |l|
+            loc = l || Roda.opts[:locale]
             session[:locale] = loc unless session[:locale]
             ::R18n.set(loc)
             yield if block_given?
