@@ -539,8 +539,8 @@ class Rodai18nTests < Minitest::Spec
               
               describe 'after #locale block' do
                 
-                it 'should return the correct translations' do
-                  rt('/two').must_equal 'Two'
+                it 'should fail with RuntimeError -> path /two not found' do
+                  proc { rt('/two') }.must_raise(RuntimeError, "path /two not found")
                 end
                 
               end # /after
