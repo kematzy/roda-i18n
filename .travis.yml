@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+ - 2.0
+ - 2.1
+ - 2.2
+ - 2.3
+ - jruby
+ - rbx-2
+# uncomment and edit the following line if your project needs to run something other than `rake`:
+# script: bundle exec rspec spec
