@@ -6,5 +6,8 @@ rvm:
  - 2.3
  - jruby
  - rbx-2
+before_install: 
+  - gem install bundler -v 1.12.5
+
 # uncomment and edit the following line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
