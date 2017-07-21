@@ -296,7 +296,6 @@ class Roda
         def locale(opts = {}, &blk)
           on(_match_available_locales_only, opts) do |l|
             loc = l || Roda.opts[:locale]
-            session[:locale] = loc unless session[:locale]
             ::R18n.set(loc)
             yield if block_given?
             return # NB!! needed to enable routes below to work
