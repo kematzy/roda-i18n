@@ -185,10 +185,8 @@ class Rodai18nTests < Minitest::Spec
                   ::R18n.available_locales.must_be_kind_of(Array)
                   ::R18n.available_locales.first.must_be_kind_of(::R18n::Locale)
                   
-                  ::R18n.available_locales[0].code.must_equal 'de'
-                  ::R18n.available_locales[1].code.must_equal 'en'
-                  ::R18n.available_locales[2].code.must_equal 'es'
-                  ::R18n.available_locales[3].code.must_equal 'sv-SE'
+                  locales = ::R18n.available_locales.map { |locale| locale.code }.sort
+                  locales.must_equal ['de', 'en', 'es', 'sv-SE']
                 end
                 
               end
