@@ -119,7 +119,7 @@ class Minitest::Spec
         r.i18n_set_locale_from(type)
         r.get('locale') { erb('<%= t.hello %>') }
         r.get('locale/one') { erb('<%= t.one %>') }
-        r.get('locale/:lang') do |lng|
+        r.get('locale', :lang) do |lng|
           @lng = lng
           # erb(%Q{<%= @lng %>})
           erb(%Q{<%= t.do.you.speak[:#{@lng}] %>}, {locals: { lng: @lng.to_sym }})
@@ -142,10 +142,10 @@ class Minitest::Spec
         r.root { erb('<%= t.hello %>') }
         r.i18n_set_locale( set_loc ) do
           r.is('t/hello')  { erb("<%= t.hello %>") }
-          r.on('posts/:id') do |id|
+          r.on('posts', :id) do |id|
             @id = id.to_i
             r.on('comments') do
-              r.is(':id') do |cid|
+              r.is(:id) do |cid|
                 @cid = cid.to_i
                 erb('<%= t.post.comments(@id, @cid) %>')
               end
