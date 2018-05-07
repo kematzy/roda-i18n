@@ -809,10 +809,10 @@ class Rodai18nTests < Minitest::Spec
             
             it 'should return an array when locales are found' do
               o = i18n_app('<%= i18n_available_locales %>', {}, { translations: @t_path })
-              o.must_match /\["de", "Deutsch"\]/
-              o.must_match /\["en", "English"\]/
-              o.must_match /\["es", "Español"\]/
-              o.must_match /\["sv-SE", "Svenska"\]/
+              o.must_match(/\["de", "Deutsch"\]/)
+              o.must_match(/\["en", "English"\]/)
+              o.must_match(/\["es", "Español"\]/)
+              o.must_match(/\["sv-SE", "Svenska"\]/)
             end
             
           end
