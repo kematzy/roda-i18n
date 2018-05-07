@@ -44,7 +44,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-assert_errors'
   spec.add_development_dependency 'minitest-hooks', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'minitest-rg'
-  spec.add_development_dependency 'rack-test', '~> 0.6.3'
+  spec.add_development_dependency 'rack-test', '~> 1.0'
   spec.add_development_dependency 'nokogiri'
   spec.add_development_dependency 'simplecov'
   
