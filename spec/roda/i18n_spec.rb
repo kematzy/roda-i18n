@@ -527,7 +527,7 @@ class Rodai18nTests < Minitest::Spec
                 end
                 
                 it 'should return the correct localisation' do
-                  rt('/en/l').must_equal '05/10/2011'
+                  rt('/en/l').must_equal '2011-10-05'
                   rt('/es/l').must_equal '05/10/2011'
                   rt('/de/l').must_equal '05.10.2011'
                   rt('/sv-se/l').must_equal '2011-10-05'
@@ -582,7 +582,7 @@ class Rodai18nTests < Minitest::Spec
               
               it 'should be correctly translated in all locales [en,de,es,sv-se]' do
                 i18n_app('<%= l Date.parse("October 5, 2011") %>', {}, @en_opts)
-                  .must_equal '05/10/2011'
+                  .must_equal '2011-10-05'
                 i18n_app('<%= l Date.parse("October 5, 2011") %>', {}, @de_opts)
                   .must_equal '05.10.2011'
                 i18n_app('<%= l Date.parse("October 5, 2011") %>', {}, @es_opts)

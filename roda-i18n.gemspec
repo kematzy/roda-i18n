@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   
   spec.add_runtime_dependency 'roda', '~> 3.7'
   spec.add_runtime_dependency 'tilt'  
-  spec.add_runtime_dependency 'r18n-core', '~> 2.0', '>= 2.1.4', '< 2.2.0'
+  spec.add_runtime_dependency 'r18n-core', '~> 3.0'
   
   spec.add_development_dependency 'bundler', "~> 1.10"
   spec.add_development_dependency 'rake', "~> 10.0"
