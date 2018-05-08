@@ -545,6 +545,30 @@ class Rodai18nTests < Minitest::Spec
 
             end # /route prefix
             
+            describe 'empty #locale block' do
+            
+              before do
+                i18n_empty_locale_app(['en'])
+              end
+              
+              describe 'above empty #locale block' do
+                
+                it 'should return the correct translations' do
+                  rt('/').must_equal 'One'
+                  rt('/one').must_equal 'One'
+                end
+                
+              end # /above
+
+              describe 'after empty #locale block' do
+                
+                it 'should return the correct translations' do
+                  rt('/two').must_equal 'Two'
+                end
+                
+              end # /after
+
+            end
           end # /#locale
           
         end

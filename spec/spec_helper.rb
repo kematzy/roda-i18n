@@ -170,9 +170,24 @@ class Minitest::Spec
           r.is('t') { erb('<%= t.one %>') }
           r.is('l') { erb '<%= l Date.parse("October 5, 2011") %>' }
         end
-        # routes behind the block does not work
-        r.get('two')   { erb('<%= t.two %>') }
-        r.root      { erb('<%= t.one %>') }
+        # routes behind the block SHOULD work
+        r.get('two') { erb('<%= t.two %>') }
+        r.root { erb('<%= t.one %>') }
+      end
+    end
+  end
+
+  # Custom specs app for testing empty r.i18n_locale()
+  def i18n_empty_locale_app(loc)
+    confs = { locale: loc, translations: File.expand_path('../fixtures/**/i18n', __FILE__) }
+    app(:bare) do
+      plugin :i18n, confs
+      route do |r|
+        r.is('one') { erb('<%= t.one %>') }
+        r.locale do
+        end
+        r.get('two') { erb('<%= t.two %>') }
+        r.root { erb('<%= t.one %>') }
       end
     end
   end

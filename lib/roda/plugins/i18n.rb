@@ -291,6 +291,7 @@ class Roda
         #         t.posts.header # use translations or locales
         #       end
         #     end
+        #     r.get(:about) { erb(:about) }
         #   end
         #
         def locale(opts = {}, &blk)
