@@ -330,20 +330,24 @@ Som form of built-in support for storing / loading translations from a Sequel ba
 * This plugin have been inspired by the `sinatra-i18n` gem available at 
   [github/ai/r18n](http://github.com/ai/r18n) created by [Andrey Sitnik](http://github.com/ai).
 
-* Testing code have been partly copied from [Forme](github.com/jeremyevans/forme).
+* Testing code have been partly copied from [Forme](https://github.com/jeremyevans/forme).
 
-* Inspiration and assistance by [Jeremy Evans](github.com/jeremyevans). Many thanks Jeremy!! 
+* Inspiration and assistance by [Jeremy Evans](https://github.com/jeremyevans). Many thanks Jeremy!! 
 
 * Code fixes and improvements by:
 
-   * [Jonathan Duarte](github.com/jonduarte). Many thanks Jonathan
+   * [Jonathan Duarte](https://github.com/jonduarte). Many thanks Jonathan for PR [#3](https://github.com/kematzy/roda-i18n/pull/3)
+
+   * [Adam Daniels](https://github.com/adam12). Many thanks Adam for PR [#4](https://github.com/kematzy/roda-i18n/pull/4), [#5](https://github.com/kematzy/roda-i18n/pull/5) & [#6](https://github.com/kematzy/roda-i18n/pull/6)
+
+   * [Firas Zaidan](https://github.com/zaidan). Many thanks Firas for PR [#7](https://github.com/kematzy/roda-i18n/pull/7)
 
 
 ## Licence
 
 MIT 
 
-Copyright: 2015 Kematzy 
+Copyright: 2015 - 2018 Kematzy 
 
 
 
