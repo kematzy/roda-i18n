@@ -185,10 +185,8 @@ class Rodai18nTests < Minitest::Spec
                   ::R18n.available_locales.must_be_kind_of(Array)
                   ::R18n.available_locales.first.must_be_kind_of(::R18n::Locale)
                   
-                  ::R18n.available_locales[0].code.must_equal 'de'
-                  ::R18n.available_locales[1].code.must_equal 'en'
-                  ::R18n.available_locales[2].code.must_equal 'es'
-                  ::R18n.available_locales[3].code.must_equal 'sv-SE'
+                  locales = ::R18n.available_locales.map { |locale| locale.code }.sort
+                  locales.must_equal ['de', 'en', 'es', 'sv-SE']
                 end
                 
               end
@@ -529,7 +527,7 @@ class Rodai18nTests < Minitest::Spec
                 end
                 
                 it 'should return the correct localisation' do
-                  rt('/en/l').must_equal '05/10/2011'
+                  rt('/en/l').must_equal '2011-10-05'
                   rt('/es/l').must_equal '05/10/2011'
                   rt('/de/l').must_equal '05.10.2011'
                   rt('/sv-se/l').must_equal '2011-10-05'
@@ -538,10 +536,6 @@ class Rodai18nTests < Minitest::Spec
               end # /within
               
               describe 'after #locale block' do
-                
-                it 'should not raise RuntimeError -> path /two not found' do
-                  proc { rt('/two') }.wont_have_error
-                end
                 
                 it 'should return the correct translations' do
                   rt('/two').must_equal 'Two'
@@ -584,7 +578,7 @@ class Rodai18nTests < Minitest::Spec
               
               it 'should be correctly translated in all locales [en,de,es,sv-se]' do
                 i18n_app('<%= l Date.parse("October 5, 2011") %>', {}, @en_opts)
-                  .must_equal '05/10/2011'
+                  .must_equal '2011-10-05'
                 i18n_app('<%= l Date.parse("October 5, 2011") %>', {}, @de_opts)
                   .must_equal '05.10.2011'
                 i18n_app('<%= l Date.parse("October 5, 2011") %>', {}, @es_opts)
@@ -811,10 +805,10 @@ class Rodai18nTests < Minitest::Spec
             
             it 'should return an array when locales are found' do
               o = i18n_app('<%= i18n_available_locales %>', {}, { translations: @t_path })
-              o.must_match /\["de", "Deutsch"\]/
-              o.must_match /\["en", "English"\]/
-              o.must_match /\["es", "Español"\]/
-              o.must_match /\["sv-SE", "Svenska"\]/
+              o.must_match(/\["de", "Deutsch"\]/)
+              o.must_match(/\["en", "English"\]/)
+              o.must_match(/\["es", "Español"\]/)
+              o.must_match(/\["sv-SE", "Svenska"\]/)
             end
             
           end

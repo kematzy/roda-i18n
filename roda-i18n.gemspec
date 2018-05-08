@@ -32,19 +32,18 @@ Gem::Specification.new do |spec|
   spec.extra_rdoc_files = ['README.md', "MIT-LICENSE"]
   spec.rdoc_options     += ['--quiet', '--line-numbers', '--inline-source', '--title', 'Roda-i18n: internationalisation plugin', '--main', 'README.md']
   
-  spec.add_runtime_dependency 'roda', '~> 2.5', '>= 2.5.0'
+  spec.add_runtime_dependency 'roda', '~> 3.7'
   spec.add_runtime_dependency 'tilt'  
-  spec.add_runtime_dependency 'r18n-core', '~> 2.0', '>= 2.1.4'
+  spec.add_runtime_dependency 'r18n-core', '~> 3.0'
   
   spec.add_development_dependency 'bundler', "~> 1.10"
-  spec.add_development_dependency 'rake', "~> 10.0"
+  spec.add_development_dependency 'rake', "~> 12.3"
   spec.add_development_dependency 'erubis'
   spec.add_development_dependency 'kramdown'
   spec.add_development_dependency 'minitest', '~> 5.7', '>= 5.7.0'
-  spec.add_development_dependency 'minitest-assert_errors'
   spec.add_development_dependency 'minitest-hooks', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'minitest-rg'
-  spec.add_development_dependency 'rack-test', '~> 0.6.3'
+  spec.add_development_dependency 'rack-test', '~> 1.0'
   spec.add_development_dependency 'nokogiri'
   spec.add_development_dependency 'simplecov'
   
