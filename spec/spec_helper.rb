@@ -165,7 +165,6 @@ class Minitest::Spec
     app(:bare) do
       plugin :i18n, confs
       route do |r|
-        r.root      { erb('<%= t.one %>') }
         r.is('one') { erb('<%= t.one %>') }
         r.locale do
           r.is('t') { erb('<%= t.one %>') }
@@ -173,6 +172,7 @@ class Minitest::Spec
         end
         # routes behind the block does not work
         r.get('two')   { erb('<%= t.two %>') }
+        r.root      { erb('<%= t.one %>') }
       end
     end
   end

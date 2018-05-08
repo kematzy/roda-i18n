@@ -272,7 +272,7 @@ class Roda
         # This custom matcher allows us to have other routes below the r.locale .. declaration
         def _match_available_locales_only
          lambda do
-           locale = remaining_path.split("/").reject(&:empty?).first
+           locale = remaining_path.split("/").reject(&:empty?).first.to_s
            if ::R18n.available_locales.map(&:code).map(&:downcase).include?(locale.downcase)
              @captures.push(locale)
              @remaining_path = remaining_path.sub("/#{locale}", "")
