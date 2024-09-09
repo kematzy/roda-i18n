@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'roda/i18n/version'
 
 Gem::Specification.new do |spec|
   spec.name           = 'roda-i18n'
-  spec.version        = ::Roda::I18n::VERSION
+  spec.version        = Roda::I18n::VERSION
   spec.authors        = ['Kematzy']
   spec.email          = ['kematzy@gmail.com']
 
@@ -27,26 +29,16 @@ Gem::Specification.new do |spec|
   spec.require_paths  = ['lib']
 
   spec.platform         = Gem::Platform::RUBY
-  spec.has_rdoc         = true
   spec.extra_rdoc_files = ['README.md', 'MIT-LICENSE']
   spec.rdoc_options += ['--quiet', '--line-numbers', '--inline-source', '--title',
                         'Roda-i18n: internationalisation plugin', '--main', 'README.md']
 
   spec.required_ruby_version = '>= 3.0.0'
 
-  spec.add_runtime_dependency 'date'
-  spec.add_runtime_dependency 'r18n-core', '~> 5.0'
-  spec.add_runtime_dependency 'roda', '~> 3.8'
-  spec.add_runtime_dependency 'tilt'
+  spec.add_dependency 'date'
+  spec.add_dependency 'r18n-core', '~> 5.0'
+  spec.add_dependency 'roda', '~> 3.8'
+  spec.add_dependency 'tilt'
 
-  spec.add_development_dependency 'bundler', '~> 2.5'
-  spec.add_development_dependency 'erubis'
-  spec.add_development_dependency 'kramdown'
-  spec.add_development_dependency 'minitest', '~> 5.7', '>= 5.7.0'
-  spec.add_development_dependency 'minitest-hooks', '~> 1.1', '>= 1.1.0'
-  spec.add_development_dependency 'minitest-rg'
-  spec.add_development_dependency 'nokogiri'
-  spec.add_development_dependency 'rack-test', '~> 2.1'
-  spec.add_development_dependency 'rake', '~> 13.2'
-  spec.add_development_dependency 'simplecov'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
