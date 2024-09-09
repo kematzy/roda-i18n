@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## next (unreleased)
+
+* Merge pull request #5 from simonneutert/bump-dependencies - Add/Bump dependencies, minimum Ruby version to 3.0.0
+
+  * __Breaking Changes:__
+  * minimum Ruby version is now >= 3.0.0
+
+  * __Dependencies:__
+  * Add `date` to `gemspec`
+  * Bump `r18n-core` to `~> 5.0`
+  * Bump `roda` to `~> 3.8`
+  * Bump `rack-test` to `1.1.0`
+  
+  * Bump `bundler` to `~> 2.5`
+  * Bump `rack-test` to `~> 2.1`
+  * Bump `rake` to `~> 13.2`
+
+  * __Tests:__
+  * switched from rack session to roda session (as plugin in test suite)
+  * fixed failing tests and updated fixtures for proper YAML due to the above changes (Psych was freaking out about the prior YAML formatting)
 
 ## 0.4.0 (2018-05-08)
 
