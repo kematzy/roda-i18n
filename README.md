@@ -341,13 +341,11 @@ Som form of built-in support for storing / loading translations from a Sequel ba
    * [Adam Daniels](https://github.com/adam12). Many thanks Adam for PR [#4](https://github.com/kematzy/roda-i18n/pull/4), [#5](https://github.com/kematzy/roda-i18n/pull/5) & [#6](https://github.com/kematzy/roda-i18n/pull/6)
 
    * [Firas Zaidan](https://github.com/zaidan). Many thanks Firas for PR [#7](https://github.com/kematzy/roda-i18n/pull/7)
-
+   
+   * [Simon Neutert](https://github.com/simonneutert). Many thanks Simon for PR [#8](https://github.com/kematzy/roda-i18n/pull/8)
 
 ## Licence
 
 MIT 
 
-Copyright: 2015 - 2018 Kematzy 
-
-
-
+Copyright: 2015 - 2024 Kematzy 
