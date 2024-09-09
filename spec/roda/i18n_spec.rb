@@ -98,8 +98,10 @@ class Rodai18nTests < Minitest::Spec
               
               describe 'opts' do
                 
-                it 'should set :locale to [:es,:de, "sv-se"]' do
-                  @b.i18n_opts[:locale].must_equal([:es,:de, 'sv-se'])
+                it 'should set :locale to contain the language supported' do
+                  @b.i18n_opts[:locale].must_equal(
+                    ["es", "es-us", "en", "en-us", "en-gb", "en-au", "es-cl", "de", "sv-se", "sv"]
+                  )
                 end
               
                 it 'should retain the :default_locale' do
@@ -204,11 +206,15 @@ class Rodai18nTests < Minitest::Spec
             end
             
             it 'should retain the settings from the second load' do
-              @c.i18n_opts[:locale].must_equal ['de']
               @c.i18n_opts[:default_locale].must_equal 'es'
+              @c.i18n_opts[:locale].must_equal ["de", "es", "es-us", "en", "en-us", "en-gb", "en-au", "es-cl", "sv-se"]
+              @c.i18n_opts[:locale].first.must_equal 'de'
+              @c.i18n_opts.keys.must_equal [:locale, :default_locale, :translations, :orig_opts]
               
-              @d.i18n_opts[:locale].must_equal ['de']
               @d.i18n_opts[:default_locale].must_equal 'sv-se'
+              @d.i18n_opts[:locale].must_equal ["de", "es", "es-us", "en", "en-us", "en-gb", "en-au", "es-cl", "sv-se"]
+              @d.i18n_opts[:locale].first.must_equal 'de'
+              @d.i18n_opts.keys.must_equal [:locale, :default_locale, :translations, :orig_opts]
               # @d.i18n_opts.must_equal 'es'
             end
             
@@ -619,11 +625,11 @@ class Rodai18nTests < Minitest::Spec
                 i18n_app('<%= l Date.parse("October 5, 2011"), :full %>', {}, @en_opts)
                   .must_equal '5th of October, 2011'
                 i18n_app('<%= l Date.parse("October 5, 2011"), :full %>', {}, @de_opts)
-                  .must_equal ' 5. Oktober 2011'
+                  .must_equal '5. Oktober 2011'
                 i18n_app('<%= l Date.parse("October 5, 2011"), :full %>', {}, @es_opts)
                   .must_equal '05 de Octubre de 2011'
                 i18n_app('<%= l Date.parse("October 5, 2011"), :full %>', {}, @sv_opts)
-                  .must_equal ' 5 oktober 2011 2011' # TODO: fix this bug in R18n
+                  .must_equal '5 oktober 2011 2011' # TODO: fix this bug in R18n
               end
               
             end

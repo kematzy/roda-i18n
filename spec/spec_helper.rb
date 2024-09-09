@@ -72,7 +72,7 @@ class Minitest::Spec
      c = Class.new(Roda)
      c.plugin :render
      c.plugin(:not_found){raise "path #{request.path_info} not found"}
-     c.use Rack::Session::Cookie, :secret=>'topsecret'
+     c.plugin(:sessions, secret: "mysecret" * 8, key: "roda.i18n")
      c.class_eval do
        def erb(s, opts={})
          render(opts.merge(:inline=>s))

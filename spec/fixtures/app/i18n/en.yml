@@ -7,8 +7,8 @@ do:
 
 user:
   edit: Edit user
-  name: User name is %1
+  name: "User name is %1"
   count: !!pl
     1: There is 1 user
-    n: There are %1 users
+    n: "There are %1 users"
 
