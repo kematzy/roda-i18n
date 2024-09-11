@@ -2,6 +2,10 @@
 
 ## next (unreleased)
 
+* your changes here
+ 
+## 0.5.0 (unreleased)
+
 * Merge pull request #5 from simonneutert/bump-dependencies - Add/Bump dependencies, minimum Ruby version to 3.0.0
 
   * __Breaking Changes:__
@@ -73,7 +77,6 @@
   * Update development dependency `rake` to `12.3`
   * Remove noop check for exception
 
-
 ## 0.3.0 (2016-08-11)
 
 * Merged PR #3 by @jonduarte - Making routes behind #locale block work
@@ -84,11 +87,9 @@
 
 * Add alias for rake test
 
-
 ## 0.2.0 (2015-11-24)
 
 * Mainly internal build and setup improvements
-
 
 ## 0.1.0 (2015-09-13)
 

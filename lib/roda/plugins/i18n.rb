@@ -152,8 +152,9 @@ class Roda
         # it is somehow nil or an empty string ' '
         opts[:default_locale] = 'en' if opts[:default_locale].nil? || opts[:default_locale] =~ /^\s*$/
         ::R18n::I18n.default = opts[:default_locale]
-
-        ::R18n.clear_cache! if ENV['RACK_ENV'] != 'production'
+        # :nocov:
+        ::R18n.clear_cache! if ENV['RACK_ENV'] != 'production' # nocov for simple one-liner
+        # :nocov:
         i18n = R18n::I18n.new(
           opts[:locale],
           ::R18n.default_places,
@@ -212,7 +213,10 @@ class Roda
           when :session
             loc = session[:locale] if session[:locale]
           when :params
+            # :nocov:
+            # loc will be nil, and caught after the `case` statement
             loc = scope.request.params['locale'] if scope.request.params['locale']
+            # :nocov:
           when :ENV
             # ENV['LANG']="en_US.UTF-8"
             loc = ENV['LANG'].split('.').first if ENV['LANG']
@@ -246,17 +250,16 @@ class Roda
         #   end
         #
         def i18n_set_locale(locale)
-          locale = ::R18n::I18n.default.to_s if locale.nil?
+          sanitized_locale = i18n_set_locale_with_fallback(locale)
 
           i18n = ::R18n::I18n.new(
-            locale,
+            sanitized_locale,
             ::R18n.default_places,
             off_filters: :untranslated,
             on_filters: :untranslated_html
           )
           ::R18n.set(i18n)
           yield if block_given?
-          # return # NB!! needed to enable routes below to work
         end
 
         # Match only paths that contain one available locale from the ::R18n.available_locales
@@ -291,11 +294,20 @@ class Roda
           on(_match_available_locales_only, opts) do |l|
             loc = l || Roda.opts[:locale]
             ::R18n.set(loc)
-            yield loc if block_given?
+            # :nocov:
+            yield loc if block_given? # nothing will happen without a block
             return # NB!! needed to enable routes below to work
+            # :nocov:
           end
         end
         alias i18n_locale locale
+
+        # Sets a fallback for locale => I18n.default
+        def i18n_set_locale_with_fallback(locale)
+          return ::R18n::I18n.default.to_s if locale.nil?
+
+          locale
+        end
       end
 
       module ClassMethods

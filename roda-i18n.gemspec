@@ -23,7 +23,10 @@ Gem::Specification.new do |spec|
   #   raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   # end
 
-  spec.files          = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files          = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features|.github|.devcontainer)/}) ||
+      f.match(/^(Dockerfile|.tool-versions|justfile|.rubocop)/)
+  end
   spec.bindir         = 'exe'
   spec.executables    = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths  = ['lib']
@@ -36,7 +39,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 3.0.0'
 
   spec.add_dependency 'date'
-  spec.add_dependency 'r18n-core', '~> 5.0'
+  spec.add_dependency 'r18n-core', '~> 5'
   spec.add_dependency 'roda', '~> 3.8'
   spec.add_dependency 'tilt'
 

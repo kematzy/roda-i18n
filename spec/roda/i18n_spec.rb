@@ -368,7 +368,7 @@ class Rodai18nTests < Minitest::Spec
                 get '/locale/one', { locale: 'es' }, set_req({}, '')
                 _(_body).must_equal 'Uno'
 
-                get '/locale', { locale: 'sv-se' }, set_req({}, '')
+                get '/locale', { locale: 'sv-SE' }, set_req({}, '')
                 _(_body).must_equal 'Hej från ./i18n/sv-se.yml'
               end
             end
@@ -398,7 +398,7 @@ class Rodai18nTests < Minitest::Spec
                 get '/locale/one', {}, { 'rack.session' => { locale: 'es' } }
                 _(_body).must_equal 'Uno'
 
-                get '/locale', {}, { 'rack.session' => { locale: 'sv-se' } }
+                get '/locale', {}, { 'rack.session' => { locale: 'sv-SE' } }
                 _(_body).must_equal 'Hej från ./i18n/sv-se.yml'
               end
 
@@ -536,7 +536,7 @@ class Rodai18nTests < Minitest::Spec
             @de_opts  = { locale: 'de',    translations: @t_path }
             @es_opts  = { locale: 'es',    translations: @t_path }
             @en_opts  = { locale: 'en',    translations: @t_path }
-            @sv_opts  = { locale: 'sv-se', translations: @t_path }
+            @sv_opts  = { locale: 'sv-SE', translations: @t_path }
           end
 
           describe 'Localisations - :l()' do

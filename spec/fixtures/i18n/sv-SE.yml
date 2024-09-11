@@ -8,23 +8,17 @@ do:
     speak:
       swedish: "Pratar du svenska?"
 
-
 user:
   # edit: Edit user
-  name: Användarnamn är %1
+  name: "Användarnamn är %1"
   count: !!pl
     1: Det finns en användare
-    n: Det finns %1 användare
+    n: "Det finns %1 användare"
 
-
-params: Är %1 mellan %1 och %2?
+params: "Är %1 mellan %1 och %2?"
 
 in:
   another: Hierarkisk
-
-# only:
-#   english: "Nej, inte på engelska"
-  
 
 robots: !!pl
   0: Inga robotar
@@ -41,7 +35,7 @@ post:
     1: "en kommentar för '%2'"
     n: "%1 kommentarer för '%2'"
 
-greater: 1 < 2 är sant
+greater: "1 < 2 är sant"
 
 warning: !!html <b>Warning</b>
 
