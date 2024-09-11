@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'coverage'
 require 'simplecov'
 
-def SimpleCov.roda_i18n_coverage(opts = {})
+def SimpleCov.roda_i18n_coverage(_opts = {})
   start do
     add_filter '/spec/'
     add_group('Missing') { |src| src.covered_percent < 100 }

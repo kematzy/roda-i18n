@@ -9,8 +9,8 @@ do:
 
 user:
   edit: Editar usuario
-  name: Nombre de usuario es %1
+  name: "Nombre de usuario es %1"
   count: !!pl
     1: Hay 1 usuario
-    n: Hay %1 usuarios
+    n: "Hay %1 usuarios"
 
