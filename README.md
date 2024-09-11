@@ -14,13 +14,13 @@ Extensively tested and with 100% code test coverage.
 To use this gem, just do
 
 ```bash
-  $ (sudo) gem install roda-i18n
+$ (sudo) gem install roda-i18n
 ```
   
 or if you use Bundler
 
 ```ruby
-gem "roda-i18n"
+gem 'roda-i18n'
 ```
 
 <br>
@@ -62,7 +62,7 @@ plugin :i18n, :locale => ['de'], :translations => ['absolute/path/2/i18n']
  1. You must set `opts[:root]` in your app if you do not define the `:translations` path during 
     plugin configuration.
 
- 3. When overriding `:translations` the **any path(s) given must be absolute**.
+ 2. When overriding `:translations` the **any path(s) given must be absolute**.
 
 
 #### Loading translations from multiple i18n directories
@@ -304,7 +304,7 @@ plugin :i18n, :translations => ['app1/i18n', 'app2/i18n', 'app3/i18n']
 
 ### Sequel DBLoader for DB based translations support
 
-Som form of built-in support for storing / loading translations from a Sequel based DB.
+Some form of built-in support for storing / loading translations from a Sequel based DB.
 
 
 <br>
@@ -327,10 +327,10 @@ Som form of built-in support for storing / loading translations from a Sequel ba
 
 ## Credits
 
-* This plugin have been inspired by the `sinatra-i18n` gem available at 
+* This plugin has been inspired by the `sinatra-i18n` gem available at 
   [github/ai/r18n](http://github.com/ai/r18n) created by [Andrey Sitnik](http://github.com/ai).
 
-* Testing code have been partly copied from [Forme](https://github.com/jeremyevans/forme).
+* Testing code has been partly copied from [Forme](https://github.com/jeremyevans/forme).
 
 * Inspiration and assistance by [Jeremy Evans](https://github.com/jeremyevans). Many thanks Jeremy!! 
 
