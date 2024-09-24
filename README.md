@@ -1,6 +1,6 @@
 # Roda-i18n
 
-[![Gem Version](https://badge.fury.io/rb/roda-i18n.svg)](https://badge.fury.io/rb/roda-i18n) [![Ruby](https://github.com/kematzy/roda-i18n/actions/workflows/ruby.yml/badge.svg)](https://github.com/kematzy/roda-i18n/actions/workflows/ruby.yml)
+[![Gem Version](https://badge.fury.io/rb/roda-i18n.svg)](https://badge.fury.io/rb/roda-i18n) [![Ruby](https://github.com/kematzy/roda-i18n/actions/workflows/ruby.yml/badge.svg?branch=master)](https://github.com/kematzy/roda-i18n/actions/workflows/ruby.yml)
 
 
 Add Internationalisation (i18n) and localisation support to your [Roda](http://roda.jeremyevans.net/) apps, based upon the [R18n](https://github.com/ai/r18n) gem.

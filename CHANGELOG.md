@@ -3,8 +3,12 @@
 ## next (unreleased)
 
 * your changes here
+
+## 0.6.0 (2024-09-24)
+
+* Merge pull request #6 from simonneutert/gh-ci-workflow - Adds a working GitHub CI workflow, reaches a sane/high coverage level
  
-## 0.5.0 (unreleased)
+## 0.5.0 (2024-09-24)
 
 * Merge pull request #5 from simonneutert/bump-dependencies - Add/Bump dependencies, minimum Ruby version to 3.0.0
 
