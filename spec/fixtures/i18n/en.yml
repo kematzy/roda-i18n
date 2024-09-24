@@ -1,4 +1,4 @@
-hello: "Hello from ./i18n/en.yml"
+hello: "Hello from i18n/en.yml"
 
 one: One
 two: Two
