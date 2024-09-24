@@ -10,14 +10,12 @@ do:
 
 user:
   # edit: Edit user
-
-name: "Användarnamn är %1"
+  name: "Användarnamn är %1"
   count: !!pl
     1: Det finns en användare
     n: "Det finns %1 användare"
 
 params: "Är %1 mellan %1 och %2?"
-
 
 in:
   another: Hierarkisk
