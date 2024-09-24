@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    roda-i18n (0.6.0)
+    roda-i18n (0.6.1)
       date
       r18n-core (~> 5)
       roda (~> 3.8)
