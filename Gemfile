@@ -6,12 +6,11 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'bundler', '~> 2.5'
-gem 'erubis'
+gem 'erubi'
 gem 'kramdown'
 gem 'minitest', '~> 5.7', '>= 5.7.0'
 gem 'minitest-hooks', '~> 1.1', '>= 1.1.0'
 gem 'minitest-rg'
-gem 'nokogiri'
 gem 'rack-test', '~> 2.1'
 gem 'rake', '~> 13.2'
 gem 'rubocop'

@@ -3,7 +3,7 @@ hello: "Hello from i18n/en.yml"
 one: One
 two: Two
 
-params: Is %3 between %1 and %2?
+params: "Is %3 between %1 and %2?"
 
 in:
   another: Hierarchical
@@ -16,8 +16,6 @@ robots: !!pl
   1: One robot
   n: "%1 robots"
 
-# sum: !!proc |x, y| x + y
-
 post:
   title: "Blog post: '%1'"
   comments: !!pl
@@ -25,7 +23,7 @@ post:
     1: "one comment for '%2'"
     n: "%1 comments for '%2'"
 
-greater: 1 < 2 is true
+greater: "1 < 2 is true"
 
 warning: !!html <b>It works!</b>
 
@@ -36,7 +34,6 @@ files: !!pl
 my_type: !!special_type
   attr: value
 
-
 as:
   html: !!html 
     <h1>Embedded HTML!</h>
@@ -45,15 +42,12 @@ as:
   md: !!markdown
     Hello **Markdown**!
 
-
-
 _html: !!html 
     <h1>Embedded HTML!</h>
     <p>It just works!</p>
   
 md: !!markdown
   Hello **Markdown**!
-
 
 example: >
         HTML goes into YAML without modification

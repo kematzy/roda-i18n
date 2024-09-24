@@ -12,7 +12,7 @@ Rake::TestTask.new(:spec) do |t|
   t.test_files = FileList['spec/**/*_spec.rb']
 end
 
-task default: %i[rubocop spec]
+task default: %i[rubocop coverage]
 
 desc 'alias for spec task'
 task test: :spec

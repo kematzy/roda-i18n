@@ -1,0 +1,4 @@
+ruby 3.3.5
+# ruby jruby-9.4.8.0
+just 1.35.0
+java temurin-22.0.2+9

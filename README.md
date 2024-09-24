@@ -1,50 +1,39 @@
 # Roda-i18n
 
-[![Gem Version](https://badge.fury.io/rb/roda-i18n.svg)](https://badge.fury.io/rb/roda-i18n)  [![Build Status](https://travis-ci.org/kematzy/roda-i18n.svg?branch=master)](https://travis-ci.org/kematzy/roda-i18n)
+[![Gem Version](https://badge.fury.io/rb/roda-i18n.svg)](https://badge.fury.io/rb/roda-i18n) [![Ruby](https://github.com/kematzy/roda-i18n/actions/workflows/ruby.yml/badge.svg)](https://github.com/kematzy/roda-i18n/actions/workflows/ruby.yml)
 
 
-Add Internationalisation (i18n) and localisation support to your [Roda](http://roda.jeremyevans.net/) 
-apps, based upon the [R18n](https://github.com/ai/r18n) gem.
+Add Internationalisation (i18n) and localisation support to your [Roda](http://roda.jeremyevans.net/) apps, based upon the [R18n](https://github.com/ai/r18n) gem.
 
-Extensively tested and with 100% code test coverage.
+Extensively tested and with a goal of 100% code test coverage.
 
 
 ## Installation
 
-To use this gem, just do
+To install this gem:
 
 ```bash
-$ (sudo) gem install roda-i18n
+$ gem install roda-i18n
 ```
   
-or if you use Bundler
+Or if you use Bundler, add this to your Gemfile:
 
 ```ruby
 gem 'roda-i18n'
 ```
 
-<br>
-
-
 ## Getting Started
 
-To add internationalisation and localisation support to your app just add the following code snippet 
-in your app.
+To add internationalisation and localisation support to your app just add the following code snippet in your app.
 
 ```ruby
 plugin :i18n
 ```
 
-By default the default locale is set to `'en'` and the translations directory is set to the `'i18n'` 
-directory in the root of your app, ie: `'/path/2/app/i18n'`.
+By default the default locale is set to `'en'` and the translations directory is set to the `'i18n'` directory in the root of your app, ie: `'/path/2/app/i18n'`.
 
 
-**IMPORTANT! Make sure you create the 'i18n' folder and add an `'en.yml'` file with at least one 
-translation within it.**
-
-
-<br>
----
+**IMPORTANT! Make sure you create the 'i18n' folder and add an `'en.yml'` file with at least one translation within it.**
 
 
 ## Configuration
@@ -59,35 +48,25 @@ plugin :i18n, :locale => ['de'], :translations => ['absolute/path/2/i18n']
 
 **NOTE!** 
 
- 1. You must set `opts[:root]` in your app if you do not define the `:translations` path during 
-    plugin configuration.
+ 1. You must set `opts[:root]` in your app if you do not define the `:translations` path during plugin configuration.
 
- 2. When overriding `:translations` the **any path(s) given must be absolute**.
-
+ 2. When overriding `:translations`, then **any path(s) given must be absolute**.
 
 #### Loading translations from multiple i18n directories
 
-The `:translations` path supports 'wildcards', ie: `path/**/i18n` so you can load translations from 
-multiple combined apps, each with their own `i18n` folder with translations.
+The `:translations` path supports 'wildcards', ie: `path/**/i18n` so you can load translations from multiple combined apps, each with their own `i18n` folder with translations.
 
 **Please Note!** 
 
-When loading translations from multiple sources and the same translation key is available in 
-multiple files of the same locale, then **the translations in the first loaded translation file 
-takes precedence over subsequent loaded translations**. 
+When loading translations from multiple sources and the same translation key is available in multiple files of the same locale, then **the translations in the first loaded translation file takes precedence over subsequent loaded translations**. 
 
 * ie: translations in `./i18n/en.yml` takes precedence over translations in `./apps/app1/i18n/en.yml`
-
 
 You can also set a list of preferred locales as an array ordered by priority.
 
 ```ruby
 plugin :i18n, :locale => ['es','fr','en']
 ```
-
-
-<br>
----
 
 ##  USAGE
 
@@ -122,7 +101,6 @@ l Time.now, :human   #=> "now"
 l Time.now, :full    #=> "3rd of January, 2010 18:54"
 ```    
 
-
 Both the `:t` and `:l` methods are available within the route and template (erb) scopes. ie:
 
 ```ruby 
@@ -138,23 +116,17 @@ end
  <snip...>
 ```  
 
-Please visit [R18n](https://github.com/ai/r18n/tree/master/r18n-core) for more information about the 
+Please visit [R18n-Core](https://github.com/ai/r18n/tree/master/r18n-core) for more information about the 
 R18n gem used to create the above.
-
-<br>
----
 
 ## Key Methods / Functionality
 
-
-<br>
-
+This plugin brings some methods and functionalities you can setup in your Roda project.
 
 ### `#locale(opts = {}, &blk)` - (request method)
 
 This request method makes it easy to handle translations based upon the **`:locale` prefix on a 
 route / URL**. ie: `blog.com/**de**/posts`.
-
 
 To enable this, just use the following code structure:
 
@@ -174,14 +146,7 @@ route do |r|
 end
 ```    
 
-	
-
-**NOTE!** Any URL / request with a non-present or not supported locale will be given the 
-**configured default locale** or the EN (English) default locale.
-
-
-<br>
-
+**NOTE!** Any URL / request with a non-present or not supported locale will be given the **configured default locale** or the EN (English) default locale.
 
 ### `#i18n_set_locale_from(type)` - (request method)
 
@@ -210,10 +175,6 @@ end
 
 **NOTE!** defaults to the configured default locale, or English, if the given locale type is invalid.
 
-
-<br>
-
-
 ### `i18n_set_locale(locale, &blk)` - (request method)
 
 Enables overriding the default locale and setting a temporary `:locale` within a route block.
@@ -235,26 +196,15 @@ route do |r|
 end
 ```  
 
-<br>
----
-
 ## InstanceMethods
 
 ### `#t`
 
 This is the main translation output method. (See examples above)
 
-
-<br>
-
-
 ### `#l`
 
 Key localisation method. Handles dates etc. (See examples above)
-
-
-<br>
-
 
 ### `#i18n_available_locales`
 
@@ -264,13 +214,7 @@ Returns a two-dimensional array of available locales.
 puts i18n_available_locales #=> [ ['en', 'English'], ...]
 ```
 
-
-        
 ### `#i18n_default_places`
-
-
-<br>
-
 
 ## Class Methods
         
@@ -278,15 +222,9 @@ puts i18n_available_locales #=> [ ['en', 'English'], ...]
 
 Return the i18n options for this class as a Hash.
 
-
-<br>
----
-
-
 ## Ideas
 
 A few ideas that may be outlandish, but possible?
-
 
 ### Ability to load translations from multiple locations via an array.
 
@@ -301,16 +239,9 @@ plugin :i18n, :translations => ['app1/i18n', 'app2/i18n', 'app3/i18n']
 >     R18n.default_places = [MyLoader.new, DBLoader.new, 'path/to/yaml']
 >    
 
-
 ### Sequel DBLoader for DB based translations support
 
 Some form of built-in support for storing / loading translations from a Sequel based DB.
-
-
-<br>
-
-
-----
 
 ## TODOs
 
@@ -324,11 +255,9 @@ Some form of built-in support for storing / loading translations from a Sequel b
 
 * ...and some more stuff that slipped my mind right now.
 
-
 ## Credits
 
-* This plugin has been inspired by the `sinatra-i18n` gem available at 
-  [github/ai/r18n](http://github.com/ai/r18n) created by [Andrey Sitnik](http://github.com/ai).
+* This plugin has been inspired by the `sinatra-i18n` gem available at [github/ai/r18n](http://github.com/ai/r18n) created by [Andrey Sitnik](http://github.com/ai).
 
 * Testing code has been partly copied from [Forme](https://github.com/jeremyevans/forme).
 
@@ -348,4 +277,4 @@ Some form of built-in support for storing / loading translations from a Sequel b
 
 MIT 
 
-Copyright: 2015 - 2024 Kematzy 
+Copyright: 2015 - 2024 Kematzy

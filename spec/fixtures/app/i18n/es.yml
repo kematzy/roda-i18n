@@ -2,6 +2,7 @@ hello: "Hola de app/i18n/es.yml"
 
 one: 'Uno'
 two: 'Dos'
+
 do:
   you:
     speak:
@@ -13,4 +14,3 @@ user:
   count: !!pl
     1: Hay 1 usuario
     n: "Hay %1 usuarios"
-

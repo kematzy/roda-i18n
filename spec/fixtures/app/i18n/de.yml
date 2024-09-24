@@ -4,8 +4,7 @@ do:
   you:
     speak:
       german: "Sprechen Sie Deutsch?"
-      
-      
+  
 user:
   edit: Benutzer bearbeiten
   name: "Benutzername ist %1"

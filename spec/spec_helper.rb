@@ -9,7 +9,7 @@ end
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'rubygems'
 require 'roda/i18n'
-require 'tilt/erubis'
+require 'tilt/erubi'
 require 'rack/test'
 require 'r18n-core'
 require 'minitest/autorun'
@@ -131,6 +131,20 @@ module Minitest
     # shortcut for setting config opts
     def set_req(session = {}, http_accept = '')
       { 'rack.session' => session, 'HTTP_ACCEPT_LANGUAGE' => http_accept }
+    end
+
+    def i18n_set_locale_app_without_block(loc)
+      confs = { locale: loc, translations: File.expand_path('fixtures/**/i18n', __dir__) }
+      app(:bare) do
+        plugin :i18n, confs
+        route do |r|
+          r.root { erb('<%= t.hello %>') }
+          r.locale({ locale: 'de', default_locale: 'es' })
+          r.is('t/hello') { erb('<%= t.hello %>') }
+          r.i18n_set_locale('fr')
+          r.is('t/2/hello') { erb('<%= t.hello %>') }
+        end
+      end
     end
 
     # Custom specs app for :i18n_set_locale()
