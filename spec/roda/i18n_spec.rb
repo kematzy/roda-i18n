@@ -220,7 +220,7 @@ class Rodai18nTests < Minitest::Spec
               end
 
               it 'should use config :default_locale (:en) below :i18n_set_locale_from() call' do
-                _(body('/locale')).must_equal 'Hello from ./i18n/en.yml'
+                _(body('/locale')).must_equal 'Hello from i18n/en.yml'
                 _(body('/locale/one')).must_equal 'One'
               end
             end
@@ -236,7 +236,7 @@ class Rodai18nTests < Minitest::Spec
               end
 
               it 'should use config :default_locale (:en) below :i18n_set_locale_from() call' do
-                _(body('/locale')).must_equal 'Hello from ./i18n/en.yml'
+                _(body('/locale')).must_equal 'Hello from i18n/en.yml'
                 _(body('/locale/one')).must_equal 'One'
               end
             end
@@ -405,7 +405,7 @@ class Rodai18nTests < Minitest::Spec
               it 'default to { :default_locale :de } when no session { locale: } is passed' do
                 _(body('/')).must_equal 'Hallo aus i18n/de.yml'
                 _(body('/one')).must_equal 'Ein'
-                _(body('/locale')).must_equal 'Hello from ./i18n/en.yml'
+                _(body('/locale')).must_equal 'Hello from i18n/en.yml'
                 _(body('/locale/one')).must_equal 'One'
               end
             end
