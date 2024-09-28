@@ -39,7 +39,7 @@ GEM
     rake (13.2.1)
     regexp_parser (2.9.2)
     rexml (3.3.7)
-    roda (3.83.0)
+    roda (3.84.0)
       rack
     rubocop (1.66.1)
       json (~> 2.3)
@@ -56,7 +56,7 @@ GEM
     rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-performance (1.21.1)
+    rubocop-performance (1.22.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     rubocop-rake (0.6.0)
@@ -69,7 +69,7 @@ GEM
     simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
     tilt (2.4.0)
-    unicode-display_width (2.5.0)
+    unicode-display_width (2.6.0)
 
 PLATFORMS
   aarch64-linux
