@@ -8,7 +8,7 @@ gemspec
 gem 'bundler', '~> 2.5'
 gem 'erubi'
 gem 'kramdown'
-gem 'minitest', '~> 5.7', '>= 5.7.0'
+gem 'minitest', '~> 5.25'
 gem 'minitest-hooks', '~> 1.1', '>= 1.1.0'
 gem 'minitest-rg'
 gem 'rack-test', '~> 2.1'
