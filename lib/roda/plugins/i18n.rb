@@ -269,7 +269,7 @@ class Roda
         def _match_available_locales_only
           lambda do
             locale = remaining_path.split('/').reject(&:empty?).first.to_s
-            if ::R18n.available_locales.map { |locale| locale.code.downcase }.include?(locale.downcase)
+            if ::R18n.available_locales.map { |available_locale| available_locale.code.downcase }.include?(locale.downcase)
               @captures.push(locale)
               @remaining_path = remaining_path.sub("/#{locale}", '')
             end
