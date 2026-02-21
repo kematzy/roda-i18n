@@ -21,7 +21,7 @@ GEM
       rexml (>= 3.4.4)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
-    minitest (5.26.0)
+    minitest (5.26.1)
     minitest-hooks (1.5.3)
       minitest (> 5.3)
     minitest-rg (5.4.0)
