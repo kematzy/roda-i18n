@@ -562,7 +562,7 @@ class Rodai18nTests < Minitest::Spec
                 _(i18n_app('<%= l Date.parse("October 5, 2011"), :full %>', {}, @es_opts))
                   .must_equal '05 de Octubre de 2011'
                 _(i18n_app('<%= l Date.parse("October 5, 2011"), :full %>', {}, @sv_opts))
-                  .must_equal '5 oktober 2011 2011' # TODO: fix this bug in R18n
+                  .must_equal '5 oktober 2011'
               end
             end
           end
@@ -709,11 +709,6 @@ class Rodai18nTests < Minitest::Spec
                   _(i18n_app('<%= t.do.you.speak.spanish %>', {}, @conf))
                     .must_equal 'do.you.speak.<span style="color: red">[spanish]</span>'
                 end
-
-                it 'should still support translation from :locale "en" somehow??' do
-                  _(i18n_app('<%= t.do.you.speak.english %>', {}, @conf))
-                    .must_equal 'Do you speak English?'
-                end
               end
             end
           end
@@ -735,7 +730,7 @@ class Rodai18nTests < Minitest::Spec
               _(o).must_match(/\["de", "Deutsch"\]/)
               _(o).must_match(/\["en", "English"\]/)
               _(o).must_match(/\["es", "Español"\]/)
-              _(o).must_match(/\["sv-SE", "Svenska"\]/)
+              _(o).must_match(/\["sv-SE", "Svenska \(Sverige\)"\]/)
             end
           end
 

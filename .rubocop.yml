@@ -1,6 +1,6 @@
 inherit_from: .rubocop_todo.yml
 
-require:
+plugins:
   - rubocop-rake
   - rubocop-performance
   - rubocop-minitest
@@ -17,7 +17,7 @@ require:
 # See https://docs.rubocop.org/rubocop/configuration
 
 AllCops:
-    TargetRubyVersion: "3.0"
+    TargetRubyVersion: "3.2"
     NewCops: enable
 
 Layout/LineLength:

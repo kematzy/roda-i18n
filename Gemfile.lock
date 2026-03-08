@@ -3,7 +3,7 @@ PATH
   specs:
     roda-i18n (0.6.1)
       date
-      r18n-core (~> 5)
+      r18n-core (~> 6)
       roda (~> 3.8)
       tilt
 
@@ -30,7 +30,7 @@ GEM
     lint_roller (1.1.0)
     mcp (0.8.0)
       json-schema (>= 4.1)
-    minitest (5.26.1)
+    minitest (5.27.0)
     minitest-hooks (1.5.3)
       minitest (> 5.3)
     minitest-rg (5.4.0)
@@ -40,8 +40,9 @@ GEM
       ast (~> 2.4.1)
       racc
     prism (1.9.0)
-    public_suffix (6.0.2)
-    r18n-core (5.0.1)
+    public_suffix (7.0.5)
+    r18n-core (6.0.0)
+      bigdecimal (~> 4.0)
     racc (1.8.1)
     racc (1.8.1-java)
     rack (3.2.5)
@@ -84,7 +85,7 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
-    simplecov-html (0.13.1)
+    simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
     tilt (2.7.0)
     unicode-display_width (3.2.0)
@@ -121,4 +122,4 @@ DEPENDENCIES
   simplecov
 
 BUNDLED WITH
-   2.5.18
+   2.7.2
