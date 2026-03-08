@@ -2,7 +2,14 @@
 
 ## next (unreleased)
 
-* your changes here
+* Multiple updates to dependencies in preparation for a new release.
+* Upgraded r18n-core to v6 and up, which fixed a couple of issues with the prior version, and also dropped support for Ruby below 3.2 - which we followed suit on by updating our minimum Ruby version to 3.2.0.
+* JRuby support for 9.4 was dropped from CI.
+* Ruby 4.0 support was added. 
+
+  * __Breaking Changes:__
+  * minimum Ruby version is now >= 3.2.0
+  * minimum JRuby version is now >= 10.0.0
 
 ## 0.6.0 (2024-09-24)
 
