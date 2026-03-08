@@ -730,7 +730,7 @@ class Rodai18nTests < Minitest::Spec
               _(o).must_match(/\["de", "Deutsch"\]/)
               _(o).must_match(/\["en", "English"\]/)
               _(o).must_match(/\["es", "Español"\]/)
-              _(o).must_match(/\["sv-SE", "Svenska"\]/)
+              _(o).must_match(/\["sv-SE", "Svenska \(Sverige\)"\]/)
             end
           end
 
