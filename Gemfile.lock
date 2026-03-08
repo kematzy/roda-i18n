@@ -3,7 +3,7 @@ PATH
   specs:
     roda-i18n (0.6.1)
       date
-      r18n-core (~> 5)
+      r18n-core (~> 6)
       roda (~> 3.8)
       tilt
 
@@ -41,7 +41,8 @@ GEM
       racc
     prism (1.9.0)
     public_suffix (6.0.2)
-    r18n-core (5.0.1)
+    r18n-core (6.0.0)
+      bigdecimal (~> 4.0)
     racc (1.8.1)
     racc (1.8.1-java)
     rack (3.2.5)
@@ -121,4 +122,4 @@ DEPENDENCIES
   simplecov
 
 BUNDLED WITH
-   2.5.18
+  2.7.2
