@@ -70,7 +70,7 @@ module Minitest
       s
     end
 
-    def _app(&block)
+    def _app(&)
       c = Class.new(Roda)
       c.plugin :render
       c.plugin(:not_found) { raise "path #{request.path_info} not found" }
@@ -80,7 +80,7 @@ module Minitest
           render(opts.merge(inline: str))
         end
       end
-      c.class_eval(&block)
+      c.class_eval(&)
       c
     end
 
