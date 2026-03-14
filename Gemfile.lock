@@ -51,7 +51,7 @@ GEM
     rake (13.3.1)
     regexp_parser (2.11.3)
     rexml (3.4.4)
-    roda (3.101.0)
+    roda (3.102.0)
       rack
     rubocop (1.85.1)
       json (~> 2.3)
