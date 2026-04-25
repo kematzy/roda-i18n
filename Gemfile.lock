@@ -16,6 +16,7 @@ GEM
     date (3.5.1)
     date (3.5.1-java)
     docile (1.4.1)
+    drb (2.2.3)
     erubi (1.13.1)
     json (2.19.3)
     json (2.19.3-java)
@@ -23,7 +24,9 @@ GEM
       rexml (>= 3.4.4)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
-    minitest (5.27.0)
+    minitest (6.0.5)
+      drb (~> 2.0)
+      prism (~> 1.5)
     minitest-hooks (1.5.3)
       minitest (> 5.3)
     minitest-rg (5.4.0)
@@ -100,7 +103,7 @@ DEPENDENCIES
   bundler (~> 2.5)
   erubi
   kramdown
-  minitest (~> 5.26)
+  minitest (~> 6.0)
   minitest-hooks (~> 1.5)
   minitest-rg
   rack-test (~> 2.2)
