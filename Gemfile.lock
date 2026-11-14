@@ -23,9 +23,9 @@ GEM
       rexml (>= 3.4.4)
     language_server-protocol (3.17.0.6)
     lint_roller (1.1.0)
-    minitest (6.0.6)
+    minitest (6.1.0)
       drb (~> 2.0)
-      prism (~> 1.5)
+      prism (>= 1.5, < 3)
     minitest-hooks (1.5.4)
       minitest (> 5.3)
     minitest-rg (5.4.0)
@@ -97,7 +97,7 @@ DEPENDENCIES
   bundler (~> 2.5)
   erubi
   kramdown
-  minitest (~> 6.0)
+  minitest (~> 6.1)
   minitest-hooks (~> 1.5)
   minitest-rg
   rack-test (~> 2.3)
